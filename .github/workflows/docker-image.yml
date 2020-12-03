@@ -23,5 +23,4 @@ jobs:
       		echo $PASS
       		docker build . --file Dockerfile --tag nileshgulve/nginx_web_server
       		docker login -u $USER -p $PASS
-      		docker push nileshgulve/nginx_web_server:latest
-    	
+      		docker push nileshgulve/nginx_web_server:latest  	
