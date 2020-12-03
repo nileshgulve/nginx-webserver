@@ -15,12 +15,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      	env:
-      		USER: ${{ secrets.USER }}
-      		PASS: ${{ secrets.PASS }}
-      	run: |
-      		echo $USER
-      		echo $PASS
-      		docker build . --file Dockerfile --tag nileshgulve/nginx_web_server
-      		docker login -u $USER -p $PASS
-      		docker push nileshgulve/nginx_web_server:latest  	
+      env:
+        USER: ${{ secrets.USER }}
+        PASS: ${{ secrets.PASS }}
+      run: |
+        echo $USER
+        echo $PASS
+        docker build . --file Dockerfile --tag nileshgulve/nginx_web_server
+        docker login -u $USER -p $PASS
+        
+        docker push nileshgulve/nginx_web_server:latest
